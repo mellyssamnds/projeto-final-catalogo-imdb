@@ -1,3 +1,5 @@
+package model;
+
 public class Diretor extends Pessoa {
     private String estiloDirecao;
     private Double avaliacaoCritica;

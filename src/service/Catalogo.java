@@ -1,6 +1,10 @@
+package service;
 import exception.AtorNaoEncontradoException;
 import exception.DiretorNaoEncontradoException;
 import exception.FilmeNaoEncontradoException;
+import model.Ator;
+import model.Diretor;
+import model.Filme;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -88,12 +92,12 @@ public class Catalogo {
 
     }
 
-    public void cadastrarAtores(String nome){
+    public void cadastrarAtores(String nome, int numOscars){
         //Vai ter que checar se já tem
         if(isActorInList(nome)){
             System.out.println("Ator já está na lista ");
         }else{
-            Ator novoAtor = new Ator(nome);
+            Ator novoAtor = new Ator(nome,numOscars);
             this.atores.add(novoAtor);
         }
     }

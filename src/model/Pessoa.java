@@ -18,6 +18,5 @@ public abstract class Pessoa {
 
 
     //metodos
-    public void apresentarCurriculo(){
-    }
+    public abstract void apresentarCurriculo();
 }

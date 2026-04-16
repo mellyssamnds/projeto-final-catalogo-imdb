@@ -5,6 +5,7 @@ import exception.FilmeNaoEncontradoException;
 import model.Ator;
 import model.Diretor;
 import model.Filme;
+import model.Pessoa;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -92,22 +93,22 @@ public class Catalogo {
 
     }
 
-    public void cadastrarAtores(String nome, int numOscars){
+    public void cadastrarAtores(String nome,LocalDate dataNascimento, int numOscars){
         //Vai ter que checar se já tem
         if(isActorInList(nome)){
             System.out.println("Ator já está na lista ");
         }else{
-            Ator novoAtor = new Ator(nome,numOscars);
+            Ator novoAtor = new Ator(nome,dataNascimento,numOscars);
             this.atores.add(novoAtor);
         }
     }
 
-    public void cadastrarDiretores(String nome, String estiloDirecao, Double avaliacaoCritica){
+    public void cadastrarDiretores(String nome,LocalDate dataNascimento, String estiloDirecao, Double avaliacaoCritica){
         //Vai ter que checar se já tem
         if(isDirectorInList(nome)){
             System.out.println("Diretor já está na lista ");
         }else{
-            Diretor novoDiretor = new Diretor(nome,estiloDirecao,avaliacaoCritica);
+            Diretor novoDiretor = new Diretor(nome,dataNascimento,estiloDirecao,avaliacaoCritica);
             this.diretores.add(novoDiretor);
         }
     }
@@ -173,6 +174,26 @@ public class Catalogo {
             System.out.println("Diretor adicionado com sucesso!");
 
 
+    }
+
+    public  List<Filme> filmesPorPessoa(Pessoa pessoa){
+
+        List<Filme> filmesDaPessoa = new ArrayList<>();
+
+        if(pessoa instanceof Ator){
+            for(Filme filme:this.filmes){
+                if(filme.getAtores().contains(pessoa)){
+                    filmesDaPessoa.add(filme);
+                }
+            }
+        }else if(pessoa instanceof Diretor){
+            for(Filme filme:this.filmes){
+                if(filme.getDiretor().equals(pessoa)){
+                    filmesDaPessoa.add(filme);
+                }
+            }
+        }
+        return filmesDaPessoa;
     }
 
 

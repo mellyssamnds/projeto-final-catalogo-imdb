@@ -4,4 +4,9 @@ public class Ator extends Pessoa {
 
         super(nome, idade, nacionalidade);
     }
+
+    @Override
+    public String getPapelNoFilme() {
+        return "Ator";
+    }
 }

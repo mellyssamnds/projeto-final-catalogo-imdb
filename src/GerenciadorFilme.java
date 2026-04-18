@@ -24,4 +24,84 @@ public class GerenciadorFilme {
 
         return filme;
     }
+    public static Ator cadastrarAtor(Scanner sc) {
+        System.out.println("\n=== Cadastro de Ator ===");
+        System.out.print("Nome: ");
+        String nome = sc.nextLine();
+        System.out.print("Idade: ");
+        int idade = Integer.parseInt(sc.nextLine());
+        System.out.print("Nacionalidade: ");
+        String nacionalidade = sc.nextLine();
+        System.out.print("Número de Oscars: ");
+        int numOscars = Integer.parseInt(sc.nextLine());
+
+        Ator ator = new Ator(nome, idade, nacionalidade, numOscars);
+        System.out.println("Ator cadastrado com sucesso!");
+        return ator;
+    }
+
+    public static Diretor cadastrarDiretor(Scanner sc) {
+        System.out.println("\n=== Cadastro de Diretor ===");
+        System.out.print("Nome: ");
+        String nome = sc.nextLine();
+        System.out.print("Idade: ");
+        int idade = Integer.parseInt(sc.nextLine());
+        System.out.print("Nacionalidade: ");
+        String nacionalidade = sc.nextLine();
+        System.out.print("Estilo de Direção: ");
+        String estilo = sc.nextLine();
+
+        Diretor diretor = new Diretor(nome, idade, nacionalidade, estilo);
+        System.out.println("Diretor cadastrado com sucesso!");
+        return diretor;
+    }
+
+    public static void associarAtorAoFilme(Scanner sc, Catalogo catalogo){
+        System.out.println("\n=== Associar Ator a Filme ===");
+
+        System.out.print("Digite o nome do filme: ");
+        Filme filme = catalogo.buscarFilme(sc.nextLine());
+
+        if (filme == null) {
+            System.out.println("Erro: Filme não encontrado no catálogo.");
+            return;
+        }
+
+        System.out.print("Digite o nome do ator: ");
+        Ator ator = catalogo.buscarAtor(sc.nextLine());
+
+        if (ator == null) {
+            System.out.println("Erro: Ator não encontrado no catálogo. Cadastre-o primeiro.");
+            return;
+        }
+
+        filme.adicionarAtor(ator);
+        System.out.println("Sucesso! " + ator.getNome() + " foi adicionado ao filme " + filme.getNome());
+
+    }
+    public static void associarDiretorAoFilme(Scanner sc, Catalogo catalogo) {
+        System.out.println("\n=== Associar Diretor a Filme ===");
+
+        System.out.print("Digite o nome do filme: ");
+        Filme filme = catalogo.buscarFilme(sc.nextLine());
+
+        if (filme == null) {
+            System.out.println("Erro: Filme não encontrado no catálogo.");
+            return;
+        }
+
+        System.out.print("Digite o nome do diretor: ");
+        Diretor diretor = catalogo.buscarDiretor(sc.nextLine());
+
+        if (diretor == null) {
+            System.out.println("Erro: Diretor não encontrado no catálogo. Cadastre-o primeiro.");
+            return;
+        }
+
+
+        filme.setDiretor(diretor);
+        System.out.println("Sucesso! " + diretor.getNome() + " foi definido como diretor do filme " + filme.getNome());
+    }
+
+
 }

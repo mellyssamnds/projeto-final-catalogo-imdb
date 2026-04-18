@@ -26,6 +26,23 @@ public class Catalogo {
         }
         return null;
     }
+    public Ator buscarAtor(String nome) {
+        for (Ator ator : atores) {
+            if (ator.getNome().equalsIgnoreCase(nome)) {
+                return ator;
+            }
+        }
+        return null;
+    }
+
+    public Diretor buscarDiretor(String nome) {
+        for (Diretor diretor : diretores) {
+            if (diretor.getNome().equalsIgnoreCase(nome)) {
+                return diretor;
+            }
+        }
+        return null;
+    }
 
     public void listarFilmes() {
         if (filmes.isEmpty()) {

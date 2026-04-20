@@ -18,6 +18,16 @@ public class Catalogo {
         diretores.add(diretor);
     }
 
+    public void removerFilme(Filme filme){
+        filmes.remove(filme);
+    }
+    public void removerAtor(Ator ator){
+        atores.remove(ator);
+    }
+    public void removerDiretor(Diretor diretor){
+        diretores.remove(diretor);
+    }
+
     public Filme buscarFilme(String nome) {
         for (Filme filme : filmes) {
             if (filme.getNome().equalsIgnoreCase(nome)) {

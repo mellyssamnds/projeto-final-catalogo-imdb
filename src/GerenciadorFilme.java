@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import exceptions.EntidadeNaoEncontradaException;
 
 public class GerenciadorFilme {
 
@@ -63,16 +64,14 @@ public class GerenciadorFilme {
         Filme filme = catalogo.buscarFilme(sc.nextLine());
 
         if (filme == null) {
-            System.out.println("Erro: Filme não encontrado no catálogo.");
-            return;
+            throw new EntidadeNaoEncontradaException("Filme", "informado");
         }
 
         System.out.print("Digite o nome do ator: ");
         Ator ator = catalogo.buscarAtor(sc.nextLine());
 
         if (ator == null) {
-            System.out.println("Erro: Ator não encontrado no catálogo. Cadastre-o primeiro.");
-            return;
+            throw new EntidadeNaoEncontradaException("Ator", "informado");
         }
 
         filme.adicionarAtor(ator);
@@ -86,16 +85,14 @@ public class GerenciadorFilme {
         Filme filme = catalogo.buscarFilme(sc.nextLine());
 
         if (filme == null) {
-            System.out.println("Erro: Filme não encontrado no catálogo.");
-            return;
+            throw new EntidadeNaoEncontradaException("Filme", "informado");
         }
 
         System.out.print("Digite o nome do diretor: ");
         Diretor diretor = catalogo.buscarDiretor(sc.nextLine());
 
         if (diretor == null) {
-            System.out.println("Erro: Diretor não encontrado no catálogo. Cadastre-o primeiro.");
-            return;
+            throw new EntidadeNaoEncontradaException("Diretor", "informado");
         }
 
 
@@ -110,8 +107,7 @@ public class GerenciadorFilme {
         Filme filme = catalogo.buscarFilme(sc.nextLine());
 
         if (filme == null) {
-            System.out.println("Erro: Filme não encontrado no catálogo.");
-            return;
+            throw new EntidadeNaoEncontradaException("Filme", "informado");
         }
 
         catalogo.removerFilme(filme);
@@ -123,8 +119,7 @@ public class GerenciadorFilme {
         Ator ator = catalogo.buscarAtor(sc.nextLine());
 
         if (ator == null) {
-            System.out.println("Erro: Ator não encontrado no catálogo.");
-            return;
+            throw new EntidadeNaoEncontradaException("Ator", "informado");
         }
 
         catalogo.removerAtor(ator);
@@ -137,8 +132,7 @@ public class GerenciadorFilme {
         Diretor diretor = catalogo.buscarDiretor(sc.nextLine());
 
         if (diretor == null) {
-            System.out.println("Erro: Diretor não encontrado no catálogo.");
-            return;
+            throw new EntidadeNaoEncontradaException("Diretor", "informado");
         }
 
         catalogo.removerDiretor(diretor);

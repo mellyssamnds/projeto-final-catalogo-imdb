@@ -2,12 +2,12 @@ import java.util.ArrayList;
 
 public class Filme {
 
-    private String nome;
-    private int dataLancamento;
-    private double orcamento;
-    private String descricao;
+    private final String nome;
+    private final int dataLancamento;
+    private final double orcamento;
+    private final String descricao;
     private Diretor diretor;
-    private ArrayList<Ator> atores = new ArrayList<>();
+    private final ArrayList<Ator> atores = new ArrayList<>();
 
     public Filme(String nome, int dataLancamento, double orcamento, String descricao) {
         this.nome = nome;

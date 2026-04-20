@@ -1,8 +1,8 @@
 public abstract class Pessoa {
 
-    private String nome;
-    private int idade;
-    private String nacionalidade;
+    private final String nome;
+    private final int idade;
+    private final String nacionalidade;
 
     public Pessoa(String nome, int idade, String nacionalidade) {
         if (nome == null || nome.isBlank()) {

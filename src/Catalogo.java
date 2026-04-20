@@ -1,31 +1,48 @@
 import java.util.ArrayList;
+import exceptions.EntidadeDuplicadaException;
+import exceptions.EntidadeNaoEncontradaException;
 
 public class Catalogo {
 
-    private ArrayList<Filme> filmes = new ArrayList<>();
-    private ArrayList<Ator> atores = new ArrayList<>();
-    private ArrayList<Diretor> diretores = new ArrayList<>();
+    private final ArrayList<Filme> filmes = new ArrayList<>();
+    private final ArrayList<Ator> atores = new ArrayList<>();
+    private final ArrayList<Diretor> diretores = new ArrayList<>();
 
     public void cadastrarFilme(Filme filme) {
+        if (buscarFilme(filme.getNome()) != null) {
+            throw new EntidadeDuplicadaException("Filme", filme.getNome());
+        }
         filmes.add(filme);
     }
 
     public void cadastrarAtor(Ator ator) {
+        if (buscarAtor(ator.getNome()) != null) {
+            throw new EntidadeDuplicadaException("Ator", ator.getNome());
+        }
         atores.add(ator);
     }
 
     public void cadastrarDiretor(Diretor diretor) {
+        if (buscarDiretor(diretor.getNome()) != null) {
+            throw new EntidadeDuplicadaException("Diretor", diretor.getNome());
+        }
         diretores.add(diretor);
     }
 
     public void removerFilme(Filme filme){
-        filmes.remove(filme);
+        if (!filmes.remove(filme)) {
+            throw new EntidadeNaoEncontradaException("Filme", filme.getNome());
+        }
     }
     public void removerAtor(Ator ator){
-        atores.remove(ator);
+        if (!atores.remove(ator)) {
+            throw new EntidadeNaoEncontradaException("Ator", ator.getNome());
+        }
     }
     public void removerDiretor(Diretor diretor){
-        diretores.remove(diretor);
+        if (!diretores.remove(diretor)) {
+            throw new EntidadeNaoEncontradaException("Diretor", diretor.getNome());
+        }
     }
 
     public Filme buscarFilme(String nome) {

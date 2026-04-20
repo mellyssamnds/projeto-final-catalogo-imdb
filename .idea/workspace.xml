@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47abe920-54b4-4d78-9b4c-6d9fc992ea43" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Catalogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Catalogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Diretor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Diretor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GerenciadorFilme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GerenciadorFilme.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProgramaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProgramaPrincipal.java" afterDir="false" />
     </list>
@@ -55,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "adicao-associacao-ator-diretor",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/eduar/Área de Trabalho/adadnv/projeto-final-catalogo-imdb",
@@ -65,6 +64,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\eduar\Área de Trabalho\adadnv\projeto-final-catalogo-imdb" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="" />
     </key>

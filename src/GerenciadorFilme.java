@@ -103,5 +103,47 @@ public class GerenciadorFilme {
         System.out.println("Sucesso! " + diretor.getNome() + " foi definido como diretor do filme " + filme.getNome());
     }
 
+    public static void removerFilme(Scanner sc, Catalogo catalogo) {
+        System.out.println("\n=== Remover Filme ===");
+        System.out.print("Digite o nome do filme que deseja remover: ");
+
+        Filme filme = catalogo.buscarFilme(sc.nextLine());
+
+        if (filme == null) {
+            System.out.println("Erro: Filme não encontrado no catálogo.");
+            return;
+        }
+
+        catalogo.removerFilme(filme);
+        System.out.println("O filme '" + filme.getNome() + "' foi removido permanentemente do catálogo.");
+    }
+    public static void removerAtor(Scanner sc, Catalogo catalogo) {
+        System.out.println("\n=== Remover Ator ===");
+        System.out.print("Digite o nome do ator que deseja remover: ");
+        Ator ator = catalogo.buscarAtor(sc.nextLine());
+
+        if (ator == null) {
+            System.out.println("Erro: Ator não encontrado no catálogo.");
+            return;
+        }
+
+        catalogo.removerAtor(ator);
+        System.out.println("Sucesso! O ator '" + ator.getNome() + "' foi removido permanentemente do catálogo.");
+    }
+
+    public static void removerDiretor(Scanner sc, Catalogo catalogo) {
+        System.out.println("\n=== Remover Diretor ===");
+        System.out.print("Digite o nome do diretor que deseja remover: ");
+        Diretor diretor = catalogo.buscarDiretor(sc.nextLine());
+
+        if (diretor == null) {
+            System.out.println("Erro: Diretor não encontrado no catálogo.");
+            return;
+        }
+
+        catalogo.removerDiretor(diretor);
+        System.out.println("Sucesso! O diretor '" + diretor.getNome() + "' foi removido permanentemente do catálogo.");
+    }
+
 
 }

@@ -55,6 +55,19 @@ public class Filme {
             atores.add(ator);
         }
     }
+    public void removerAtor(Ator ator) {
+        if (ator != null) {
+            atores.remove(ator);
+        }
+    }
+    public void removerDiretor(Diretor diretor) {
+        if (diretor == null) {
+            throw new IllegalArgumentException("Diretor não pode ser nulo");
+        }
+        if (this.diretor != null && this.diretor.equals(diretor)) {
+            this.diretor = null;
+        }
+    }
 
     public ArrayList<Pessoa> getEquipeDoFilme() {
         ArrayList<Pessoa> equipe = new ArrayList<>();

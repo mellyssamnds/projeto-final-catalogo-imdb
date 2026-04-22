@@ -35,13 +35,21 @@ public class Catalogo {
         }
     }
     public void removerAtor(Ator ator){
+        for (Filme filme : filmes) {
+            filme.removerAtor(ator);
+        }
         if (!atores.remove(ator)) {
             throw new EntidadeNaoEncontradaException("Ator", ator.getNome());
         }
     }
-    public void removerDiretor(Diretor diretor){
+
+    public void removerDiretor(Diretor diretor) {
         if (!diretores.remove(diretor)) {
             throw new EntidadeNaoEncontradaException("Diretor", diretor.getNome());
+        }
+
+        for (Filme filme : filmes) {
+            filme.removerDiretor(diretor);
         }
     }
 

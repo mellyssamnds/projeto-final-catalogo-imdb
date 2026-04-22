@@ -84,17 +84,21 @@ A busca é realizada pelo nome, ignorando letras maiúsculas e minúsculas.
 ## 📂 Como Executar
 
 ```bash
-# Clone o repositório
+# 1. Clone o repositório
 git clone https://github.com/mellyssamnds/projeto-final-catalogo-imdb.git
 
-# Entre na pasta do projeto
+# 2. Entre na pasta do projeto
 cd projeto-final-catalogo-imdb
 
-# Compile o projeto
-javac Main.java
+# 3. Crie uma pasta para os arquivos compilados (opcional, mas recomendado)
+mkdir out
 
-# Execute
-java Main
+# 4. Compile todos os arquivos .java de uma vez para a pasta 'out'
+# O uso do *.java garante que todas as dependências (Filme, Catalogo, etc) sejam compiladas
+javac -d out src/*.java
+
+# 5. Execute a classe principal a partir da pasta de saída
+java -cp out ProgramaPrincipal
 ```
 
 ---
